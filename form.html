@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Form Validations</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <form id="form" onsubmit="validation(); return false"> -->
+        <form id="form" onsubmit="handleSubmit(); return false">
+            <label for="emailid">Email Id</label><br>
+            <input type="text" id="email-id">
+            <span id="error1"   class="fill" style="color: red; font-size: 12px;"></span>
+            <br><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password">
+            <span id="error2" class="fill" style="color: red; font-size: 12px;"></span>
+            <br><br>
+            <label for="confirm-password">Confirm Password</label><br>
+            <input type="password" id="confirm-password">
+            <span id="error3" class="fill" style="color: red; font-size: 12px;"></span>
+            <br><br>
+            <!-- <button id="btn" onclick="reload()">Submit</button> -->
+            <button id="btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+
+<!-- <script>
+    validation = () => {
+        // setTimeout(function () { 
+        //         location.reload();
+        //     }, 3 * 1000);
+        let email = document.getElementById('email-id').value;
+        let pass = document.getElementById('password').value;
+        let compass = document.getElementById('confirm-password').value;
+        let passwrd = /^(?=.*\d)(?=.*\W+)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
+
+        if(email == ""){
+            document.getElementById('error1').innerHTML = "Email Id is required."
+        }
+        if(email.indexOf("@") == 0){
+            document.getElementById('error1').innerHTML = "Email Id cannot start with @."
+        }
+        if((email.charAt(email.length - 4) != ".") && (email.charAt(email.length -3) != ".")){
+            document.getElementById('error1').innerHTML = "Email Id doesn't exist."
+        }
+        if(pass == ""){
+            document.getElementById('error2').innerHTML = "Password is required."
+        } 
+        if(pass.length < 6){
+            document.getElementById('error2').innerHTML = "Password must be at least 6 characters long."
+        }
+        if(!pass.match(passwrd)){
+            document.getElementById('error2').innerHTML = "Password must contain at least a uppercase character, a digit & a special character."
+        }
+        if(pass != compass){
+            document.getElementById('error3').innerHTML = "Your password is not matching."
+        }
+        if(compass == ""){
+            document.getElementById('error3').innerHTML = "Confirm password is required."
+        }
+    }
+    reload = () => {
+       let hello = document.getElementById('error1').innerHTML = "hello world"
+       console.log(hello)
+    }
+</script> -->
+
+</body>
+</html>
